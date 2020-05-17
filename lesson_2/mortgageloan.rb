@@ -16,25 +16,25 @@ end
 
 loan_amount = ''
 loop do
-  puts "Enter loan amount:"
+  puts 'Enter loan amount:'
   loan_amount = gets.chomp
-  break if loan_amount.to_i.to_s == loan_amount || loan_amount.to_f.to_s == loan_amount
+  break if [loan_amount.to_i.to_s, loan_amount.to_f.to_s].include?(loan_amount)
 
   error_message
 end
 
 apr = ''
 loop do
-  puts "Enter APR:"
+  puts 'Enter APR:'
   apr = gets.chomp
-  break if apr.to_i.to_s == apr || apr.to_f.to_s == apr
+  break if [apr.to_i.to_s, apr.to_f.to_s].include?(apr)
 
   error_message
 end
 
 months_in_loan = ''
 loop do
-  puts "Enter loan duration (in months):"
+  puts 'Enter loan duration (in months):'
   months_in_loan = gets.chomp
   break if months_in_loan.to_i.to_s == months_in_loan
 
@@ -45,6 +45,5 @@ j = apr.to_f / 1200
 l = loan_amount.to_f
 n = months_in_loan.to_f
 
-monthly_payment = l * (j / (1 - (1 + j)**(-n)))
+monthly_payment = l * (j / (1 - (1 + j)**-n))
 puts "Your monthly payment will be: $#{monthly_payment.round(2)}"
-

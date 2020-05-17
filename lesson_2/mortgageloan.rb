@@ -41,6 +41,10 @@ loop do
   error_message
 end
 
-monthly_interest_rate = apr.to_f / 12
+j = apr.to_f / 1200
+l = loan_amount.to_f
+n = months_in_loan.to_f
 
+monthly_payment = l * (j / (1 - (1 + j)**(-n)))
+puts "Your monthly payment will be: $#{monthly_payment.round(2)}"
 

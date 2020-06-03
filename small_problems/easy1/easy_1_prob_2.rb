@@ -5,8 +5,19 @@
 # D: ints
 # A: convert int to abs value, call .odd? on it
 
+=begin
 def is_odd?(num)
     num % 2 == 1
 end
+=end
+
+# Solve the problem with Integer#remainder instead
+
+def is_odd?(num)
+    num.remainder(2).abs == 1
+end
 
 puts is_odd?(-3)
+puts is_odd?(0)
+puts is_odd?(2)
+puts is_odd?(5)

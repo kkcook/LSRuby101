@@ -7,14 +7,7 @@
 
 
 def digits(number)
-    num = number
-    digit_array = []
-    loop do
-        digit_array << num % 10
-        break if num < 10
-        num = num / 10
-    end
-    digit_array.reverse
+    number.to_s.chars.map(&:to_i)
 end
 
-p digits(1000)
+p digits(100)

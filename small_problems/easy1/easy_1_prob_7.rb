@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Stringy Strings
 
 # Prob: write method that takes pos int and returns string of
@@ -7,34 +9,32 @@
 # A: int.times if odd will end in 1 if even will end in 0
 #       If odd, minus 1 / 2 print "10"'s, if even / 2 print "10"s
 
-=begin FIRST PASS
-def stringy(num)
-  output = ''
-  if num.odd?
-    output << ('10' * ((num - 1) / 2))
-    output << '1'
-  else
-    output << '10' * (num/2)
-  end
-end
-=end
+# FIRST PASS
+# def stringy(num)
+#   output = ''
+#   if num.odd?
+#     output << ('10' * ((num - 1) / 2))
+#     output << '1'
+#   else
+#     output << '10' * (num/2)
+#   end
+# end
 
 # New algorithm idea: print 1 or zero based on odd/evenness of the index
 
 def stringy(num)
-    output = ''
-    
-    num.times do |x|
-        if x.even? 
-            output << '1'
-        else
-            output << '0'
-        end
-    end
+  output = []
 
-    output
+  num.times do |x|
+    output << if x.even?
+                1
+              else
+                0
+              end
+  end
+
+  output.join
 end
-
 
 # Examples
 puts stringy(6) == '101010'

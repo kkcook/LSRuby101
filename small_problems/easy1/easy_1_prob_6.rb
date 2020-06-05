@@ -13,9 +13,7 @@
 def reverse_words(sentence)
   words = sentence.split
 
-  words.map do |word|
-    word.reverse! if word.size >= 5
-  end
+  words.map { |word| word.reverse! if word.size >= 5 }
 
   words.join(' ')
 end

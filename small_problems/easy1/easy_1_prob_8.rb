@@ -5,10 +5,8 @@
 # DS: array
 # A: iterate through array and calc sum, then divide by array size
 
-def average(array)
-  sum = 0
-  array.each {|number| sum += number}
-  sum / array.size
+def average(nums)
+  nums.sum / nums.count
 end
 
 #Examples

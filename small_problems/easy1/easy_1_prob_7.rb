@@ -10,13 +10,13 @@
 #       If odd, minus 1 / 2 print "10"'s, if even / 2 print "10"s
 
 # FIRST PASS
-# def stringy(num)
-#   output = ''
-#   if num.odd?
-#     output << ('10' * ((num - 1) / 2))
-#     output << '1'
+# def stringy(size)
+#   numbers = ''
+#   if size.odd?
+#     numbers << ('10' * ((size - 1) / 2))
+#     numbers << '1'
 #   else
-#     output << '10' * (num/2)
+#     numbers << '10' * (size/2)
 #   end
 # end
 
@@ -24,18 +24,16 @@
 
 # Additional work: modify to take additional optional parameter
 
-def stringy(num, inverse = 1)
-  output = []
+def stringy(size, first_num = 1)
+  numbers = []
+  second_num = first_num.zero? ? 1 : 0
 
-  num.times do |x|
-    output << if (inverse == 1 && x.even?) || (inverse.zero? && x.odd?)
-                1
-              else
-                0
-              end
+  size.times do |index|
+    num = index.even? ? first_num : second_num
+    numbers << num
   end
 
-  output.join
+  numbers.join
 end
 
 # Examples
@@ -45,6 +43,6 @@ puts stringy(4) == '1010'
 puts stringy(7) == '1010101'
 
 # Extra tests
-puts stringy(10)
-puts stringy(1)
+puts stringy(10, 0)
+puts stringy(1, 0)
 puts stringy(0)

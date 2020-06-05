@@ -22,11 +22,13 @@
 
 # New algorithm idea: print 1 or zero based on odd/evenness of the index
 
-def stringy(num)
+# Additional work: modify to take additional optional parameter
+
+def stringy(num, inverse = 1)
   output = []
 
   num.times do |x|
-    output << if x.even?
+    output << if (inverse == 1 && x.even?) || (inverse.zero? && x.odd?)
                 1
               else
                 0

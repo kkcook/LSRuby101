@@ -6,8 +6,7 @@
 # A: check if bool is true, return half of int if yes and 0 if false
 
 def calculate_bonus(salary, receives_bonus)
-  return (salary / 2) if receives_bonus == true
-  0
+  receives_bonus ? (salary/2) : 0
 end
 
 

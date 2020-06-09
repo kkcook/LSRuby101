@@ -7,14 +7,13 @@
 # Alg: Write loop for prompts, put inputs into array, ->
 #   .include? to see if 6 is in the fist 5
 
+prompt_list = %w(1st 2nd 3rd 4th 5th last)
+
 def prompt(message)
   puts "=> #{message}"
 end
 
-
-
-
-
+prompt_list.each {|nth| prompt("Enter the #{nth} number:")}
 
 
 

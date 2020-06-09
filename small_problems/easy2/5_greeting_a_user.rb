@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Greeting a user
 
 # P: Write a program that greets a user.
@@ -10,8 +12,12 @@
 puts '=> What is your name?'
 name = gets.chomp
 
-if name[name.length - 1] == '!'
-  puts "HELLO #{name.upcase}, WHY ARE WE YELLING?!"
+if name[-1] == '!'
+  puts "HELLO #{name.chop.upcase}. WHY ARE WE YELLING?!"
 else
   puts "Hey, #{name}."
 end
+
+# Example:
+# What is your name? Bob!
+# HELLO BOB. WHY ARE WE SCREAMING?

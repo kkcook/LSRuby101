@@ -1,24 +1,20 @@
+# frozen_string_literal: true
+
 # Searching 101
 
 # Prob: ask user for 6 numbers then tell them if 6th num is present in first 5
 # Input/output: input 6 nums, output strings with boolean
-# Example at the bottom
+# Example given at the bottom
 # Datastructure: array for initial outputs, array for inputs
 # Alg: Write loop for prompts, put inputs into array, ->
 #   .include? to see if 6 is in the fist 5
 
-prompt_list = %w(1st 2nd 3rd 4th 5th last)
+prompt_list = %w[1st 2nd 3rd 4th 5th last]
 user_inputs = []
-counter = 0
 
-def prompt(message)
-  puts "=> #{message}"
-end
-
-prompt_list.each do |nth| 
-  prompt("Enter the #{nth} number:")
-  user_inputs[counter] = gets.chomp.to_i
-  counter += 1
+6.times do |idx|
+  puts "=> Enter the #{prompt_list[idx]} number:"
+  user_inputs[idx] = gets.chomp.to_i
 end
 
 last_number = user_inputs.pop
@@ -26,13 +22,10 @@ last_number = user_inputs.pop
 if user_inputs.include?(last_number)
   puts "The number #{last_number} appears in #{user_inputs}."
 else
-  puts "The number #{last_number} does not appear in #{user_inputs}." 
+  puts "The number #{last_number} does not appear in #{user_inputs}."
 end
 
-
-
-
-# Example: 
+# Example:
 # ==> Enter the 1st number:
 # 25
 # ==> Enter the 2nd number:

@@ -8,12 +8,27 @@
 #   .include? to see if 6 is in the fist 5
 
 prompt_list = %w(1st 2nd 3rd 4th 5th last)
+user_inputs = []
+counter = 0
 
 def prompt(message)
   puts "=> #{message}"
 end
 
-prompt_list.each {|nth| prompt("Enter the #{nth} number:")}
+prompt_list.each do |nth| 
+  prompt("Enter the #{nth} number:")
+  user_inputs[counter] = gets.chomp.to_i
+  counter += 1
+end
+
+last_number = user_inputs.pop
+
+if user_inputs.include?(last_number)
+  puts "The number #{last_number} appears in #{user_inputs}."
+else
+  puts "The number #{last_number} does not appear in #{user_inputs}." 
+end
+
 
 
 

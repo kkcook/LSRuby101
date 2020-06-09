@@ -12,9 +12,9 @@
 prompt_list = %w[1st 2nd 3rd 4th 5th last]
 user_inputs = []
 
-6.times do |idx|
-  puts "=> Enter the #{prompt_list[idx]} number:"
-  user_inputs[idx] = gets.chomp.to_i
+prompt_list.each do |nth|
+  puts "=> Enter the #{nth} number:"
+  user_inputs << gets.chomp.to_i
 end
 
 last_number = user_inputs.pop

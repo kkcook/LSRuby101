@@ -5,4 +5,8 @@
 # Datastructure: loops
 # Algorithm: for 0..100 puts if odd
 
-100.times {|x| puts x if x.odd?}
+# 99.times {|x| puts x if x.odd?}
+
+#Further exploration: try another way
+
+puts (1...100).select {|n| n.odd?}

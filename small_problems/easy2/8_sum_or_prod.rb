@@ -15,6 +15,8 @@
 # Algorithm: ask for int and save it, as for s or p, if statement
 #   controls which process to run, calc sum or prod (0..num), print outputs
 
+# Further exploration: solve with Enumerable#inject instead
+
 puts "=> Please enter an integer greater than 0:"
 number = gets.chomp.to_i
 
@@ -22,13 +24,11 @@ loop do
   puts "=> Enter 's' to compute the sum, 'p' to compute the product."
   operation = gets.chomp.downcase
   if operation == 's'
-    sum = 0
-    (1..number).each {|num| sum += num}
+    sum = (1..number).inject(:+)
     puts "The sum of the integers between 1 and #{number} is #{sum}."
     break
   elsif operation == 'p'
-    product = 1
-    (1..number).each {|num| product *= num}
+    product = (1..number).inject(:*)
     puts "The product of the integers between 1 and #{number} is #{product}."
     break
   else

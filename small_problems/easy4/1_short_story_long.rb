@@ -11,13 +11,10 @@
 
 def short_long_short(str1, str2)
   if str1.length > str2.length
-    short = str2
-    long = str1
+    str2 + str1 + str2
   else
-    short = str1
-    long = str2
+    str1 + str2 + str1
   end
-  short + long + short
 end
 
 # Examples

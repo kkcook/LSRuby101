@@ -3,7 +3,15 @@
 # D: arrays
 # A: create new array based on index of input array
 
-
+def oddities(input_array)
+  output = []
+  input_array.each_with_index do |element, index|
+    if index.even?
+      output << element
+    end
+  end
+  output
+end
 
 # Examples:
 puts oddities([2, 3, 4, 5, 6]) == [2, 4, 6]

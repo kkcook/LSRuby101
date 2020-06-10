@@ -5,7 +5,10 @@
 # D: arrays
 # A: turn number into array, see if reverse is ==
 
-
+def palindromic_number?(number)
+  num_array = number.digits
+  num_array == num_array.reverse
+end
 
 
 

@@ -25,7 +25,7 @@
 # end
 
 def oddities(input)
-  
+  input.select.with_index {|_, index| index.even?}
 end
 
 # Examples:

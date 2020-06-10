@@ -8,16 +8,26 @@
 # A: see if number ends in 0, divide by 100, associate suffix by last digit from hash
 
 def century(year = 1)
-  suffixes = { 0 => 'th', 1 => 'st', 2 => 'nd', 3 => 'rd', 4 => 'th', 5 => 'th', 6 => 'th', 7 => 'th', 8 => 'th', 9 => 'th' }
-
   century = if year % 100 == 0
-               year / 100
-             else
-               (year / 100) + 1
+              year / 100
+            else
+              (year / 100) + 1
              end
 
-  last_digit = century.digits.first
-  century.to_s + suffixes[last_digit]
+  century.to_s + suffix(century)
+end
+
+def suffix(century)
+  special_cases = [11, 12, 13]
+  return 'th' if special_cases.include?(century % 100)
+
+  last_digit = century % 10
+  case last_digit
+  when 1 then 'st'
+  when 2 then 'nd'
+  when 3 then 'rd'
+  else 'th'
+  end
 end
 
 # Examples
@@ -26,7 +36,7 @@ puts century(2001) == '21st'
 puts century(1965) == '20th'
 puts century(256) == '3rd'
 puts century(5) == '1st'
-puts century(10103) == '102nd'
-puts century(1052) #== '11th'
-puts century(1127) #== '12th'
-puts century(11201) #== '113th'
+puts century(10_103) == '102nd'
+puts century(1052) == '11th'
+puts century(1127) == '12th'
+puts century(11_201) == '113th'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Palindromic Strings pt. 2
 
 # P: write a method that finds palindromes without
@@ -16,11 +18,7 @@ def real_palindrome?(input)
   palindrome?(new_string)
 end
 
-
-
-
-
-# Examples: 
+# Examples:
 p real_palindrome?('madam') == true
 puts real_palindrome?('Madam') == true           # (case does not matter)
 puts real_palindrome?("Madam, I'm Adam") == true # (only alphanumerics matter)

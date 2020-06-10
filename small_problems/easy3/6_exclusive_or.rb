@@ -1,8 +1,12 @@
 # Write a method for exclusive or
 # Examples at bottom
 
+# def xor?(a, b)
+#   (a && !b) || (!a && b)
+# end
+
 def xor?(a, b)
-  (a && !b) || (!a && b)
+  (a || b) && !(a && b)
 end
 
 # examples:

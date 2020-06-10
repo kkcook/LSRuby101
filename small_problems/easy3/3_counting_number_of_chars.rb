@@ -10,6 +10,6 @@
 puts "=> Enter a word or phrase:"
 input = gets.chomp
 
-no_spaces = input.split(' ').join
+chars = input.delete(' ').size
 
-puts "=> There are #{no_spaces.length} characters in \"#{input}\"."
+puts "=> There are #{chars} characters in \"#{input}\"."

@@ -2,6 +2,7 @@
 # P: write method that takes every other val from array and returns it
 # D: arrays
 # A: create new array based on index of input array
+# Further exploration: find two other ways to do this.
 
 # def oddities(input_array)
 #   output = []
@@ -13,14 +14,18 @@
 #   output
 # end
 
+# def oddities(input)
+#   index = 0
+#   output = []
+#   while index < input.length
+#     output << input[index]
+#     index += 2
+#   end
+#   output
+# end
+
 def oddities(input)
-  index = 0
-  output = []
-  while index < input.length
-    output << input[index]
-    index += 2
-  end
-  output
+  
 end
 
 # Examples:

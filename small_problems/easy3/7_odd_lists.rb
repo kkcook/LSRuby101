@@ -3,12 +3,22 @@
 # D: arrays
 # A: create new array based on index of input array
 
-def oddities(input_array)
+# def oddities(input_array)
+#   output = []
+#   input_array.each_with_index do |element, index|
+#     if index.even?
+#       output << element
+#     end
+#   end
+#   output
+# end
+
+def oddities(input)
+  index = 0
   output = []
-  input_array.each_with_index do |element, index|
-    if index.even?
-      output << element
-    end
+  while index < input.length
+    output << input[index]
+    index += 2
   end
   output
 end

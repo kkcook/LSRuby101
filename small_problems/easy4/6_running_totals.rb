@@ -21,7 +21,7 @@
 # end
 
 def running_total(array)
-  (0..array.size - 1).map { |i| array[0..i].inject(:+)}
+  array.each_with_index { |_, i| array[0..i].inject(:+)}
 end
 
 # Examples

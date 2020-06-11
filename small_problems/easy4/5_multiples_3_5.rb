@@ -9,7 +9,19 @@
 # Alg: append all evenly dividing factors into an array
 #  Return the sum of that aray
 
+def multisum(num)
+  factor_array = []
+  sum = 0
 
+  (3..num).map do |num|
+    if num % 3 == 0 || num % 5 == 0
+      factor_array << num
+    end
+  end
+
+  factor_array.each {|factor| sum += factor}
+  sum
+end
 
 
 # Examples:

@@ -11,13 +11,29 @@
 # Algorithm: check if % 400 then leap, then check % 100 not leap,
 #   then % 4 leap, then not leap
 
+# def leap_year?(year)
+#   if year % 400 == 0
+#     true
+#   elsif year % 100 == 0
+#     false
+#   else
+#     year % 4 == 0
+#   end
+# end
+
+# Further exploration: evaluate in reverse order?
+
 def leap_year?(year)
-  if year % 400 == 0
-    true
-  elsif year % 100 == 0
-    false
+  if year % 4 == 0
+    if year % 100 == 0
+      return true if year % 400 == 0
+
+      false
+    else
+      true
+    end
   else
-    year % 4 == 0
+    false
   end
 end
 

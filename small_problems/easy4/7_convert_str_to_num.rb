@@ -14,10 +14,8 @@ NUMBERS = {
   }.freeze
 
 def string_to_integer(string_num)
-  output = 0
   int_array = string_num.chars.map {|n| NUMBERS[n]}
-  int_array.each {|digit| output = output * 10 + digit}
-  output
+  int_array.inject { |sum, digit| sum * 10 + digit }
 end
 
 # Examples

@@ -9,9 +9,15 @@
 #   array as it's own array for each sum, could save to external variable sum
 #   going to start with sum = first element in array, each iteration is += next element
 
+# def running_total(input)
+#   sum = 0
+#   input.map { |num| sum += num }
+# end
+
+# Further Exploration: solve with Enumerable#each_with_object or Enumerable#inject
 def running_total(input)
   sum = 0
-  input.map { |num| sum += num }
+  input.each_with_object([]) { |num, array| array << (sum += num)}
 end
 
 # Examples

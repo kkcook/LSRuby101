@@ -14,7 +14,7 @@
 # Further exploration solve with Enumerable#inject
 
 def multisum(num)
-  (1..num).to_a.select {|x| x % 3 == 0 || x % 5 == 0}.inject(:+)
+  (1..num).select {|x| x % 3 == 0 || x % 5 == 0}.inject(:+)
 end
 
 # Examples:

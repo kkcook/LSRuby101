@@ -23,31 +23,42 @@
 
 # Further exploration: evaluate in reverse order?
 
-def leap_year?(year)
-  if year % 4 == 0
-    if year % 100 == 0
-      return true if year % 400 == 0
+# Problem 4: every year up to 1752 that is div 4 is leap
 
-      false
-    else
-      true
-    end
-  else
-    false
-  end
+def leap_year?(year)
+  return true if (year % 4 == 0) && (year <=1752)
+  return true if (year % 400 == 0)
+  return true if !(year % 100 == 0) && (year % 4 == 0)
+  false
 end
 
-# Examples:
+# # Examples:
+# puts leap_year?(2016) == true
+# puts leap_year?(2015) == false
+# puts leap_year?(2100) == false
+# puts leap_year?(2400) == true
+# puts leap_year?(240_000) == true
+# puts leap_year?(240_001) == false
+# puts leap_year?(2000) == true
+# puts leap_year?(1900) == false
+# puts leap_year?(1752) == true
+# puts leap_year?(1700) == false
+# puts leap_year?(1) == false
+# puts leap_year?(100) == false
+# puts leap_year?(400) == true
+
+
+# Examples
 puts leap_year?(2016) == true
 puts leap_year?(2015) == false
 puts leap_year?(2100) == false
 puts leap_year?(2400) == true
-puts leap_year?(240_000) == true
-puts leap_year?(240_001) == false
+puts leap_year?(240000) == true
+puts leap_year?(240001) == false
 puts leap_year?(2000) == true
 puts leap_year?(1900) == false
 puts leap_year?(1752) == true
-puts leap_year?(1700) == false
+puts leap_year?(1700) == true
 puts leap_year?(1) == false
-puts leap_year?(100) == false
+puts leap_year?(100) == true
 puts leap_year?(400) == true

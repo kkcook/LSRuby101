@@ -9,16 +9,9 @@
 #   array as it's own array for each sum, could save to external variable sum
 #   going to start with sum = first element in array, each iteration is += next element
 
-def running_total(input_array)
+def running_total(input)
   sum = 0
-  output_array = []
-
-  input_array.each do |num|
-    sum += num
-    output_array << sum
-  end
-
-  output_array
+  input.map { |num| sum += num }
 end
 
 # Examples

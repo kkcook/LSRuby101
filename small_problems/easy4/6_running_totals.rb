@@ -20,8 +20,8 @@
 #   input.each_with_object([]) { |num, array| array << (sum += num)}
 # end
 
-def running_total(array)
-  array.each_with_index { |_, i| array[0..i].inject(:+)}
+def running_total(arr)
+  arr.each_with_index { |_, i| arr[0..i].inject(:+)}
 end
 
 # Examples

@@ -8,20 +8,15 @@
 #   split string into array of chars, match to ints, 
 #   sum the individual digits multiplied by their place, return
 
-NUMBERS = { '0' => 0, '1' => 1, '2' => 2, '3' => 3, '4' => 4, '5' => 5, '6' => 6, '7' => 7, '8' => 8, '9' => 9 }.freeze
+NUMBERS = {
+   '0' => 0, '1' => 1, '2' => 2, '3' => 3, '4' => 4,
+   '5' => 5, '6' => 6, '7' => 7, '8' => 8, '9' => 9 
+  }.freeze
 
 def string_to_integer(string_num)
-  arr = string_num.chars.reverse
-
   output = 0
-  digits_multiplier = 1
-
-  arr.each do |digit|
-    digit = NUMBERS[digit]
-    output += (digit * digits_multiplier)
-    digits_multiplier *= 10
-  end
-
+  int_array = string_num.chars.map {|n| NUMBERS[n]}
+  int_array.each {|digit| output = output * 10 + digit}
   output
 end
 

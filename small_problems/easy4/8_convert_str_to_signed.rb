@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 # Convert string to signed number
 # Prob: string may now have a sign at beginning,

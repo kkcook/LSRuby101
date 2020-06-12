@@ -10,9 +10,7 @@
 NUMBERS = %w[0 1 2 3 4 5 6 7 8 9].freeze
 
 def integer_to_string(int)
-  digit_array = int.digits.reverse
-  digit_array.map { |num| NUMBERS[num]}
-  digit_array.join
+  int.digits.reverse.join
 end
 
 # Examples:

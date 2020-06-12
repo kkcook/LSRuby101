@@ -13,18 +13,12 @@ def integer_to_string(int)
   int.digits.reverse.join
 end
 
-def signed_integer_to_string(signed_int)
-  output_string = ''
-
-  if signed_int > 0
-    output_string = integer_to_string(signed_int).prepend('+')
-  elsif signed_int < 0
-    signed_int = 0 - signed_int
-    output_string = integer_to_string(signed_int).prepend('-')
-  else
-    output_string = integer_to_string(signed_int)
+def signed_integer_to_string(num)
+  case num <=> 0
+  when -1 then "-#{integer_to_string(-num)}"
+  when +1 then "+#{integer_to_string(num)}"
+  else         integer_to_string(num)
   end
-
 end
 
 # Examples:

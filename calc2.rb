@@ -49,9 +49,11 @@ loop do
              'Invalid operator, try again.'
   end
 
-prompt(output)
+  prompt(output)
 
-prompt("Would you like to keep calculating? Type 'y' if so.")
-continue = gets.chomp.downcase
-break if continue[0] != 'y'
+  prompt("Would you like to keep calculating? Type 'y' if so.")
+  continue = gets.chomp.downcase
+  break if continue[0] != 'y'
 end
+
+# test
